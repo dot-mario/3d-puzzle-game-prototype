@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 810
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 108
+  controlID: 97
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 83
+  controlID: 117
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -269,14 +269,14 @@ MonoBehaviour:
     y: 426
     width: 418.5
     height: 334
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -655,9 +655,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.760284, y: -0.17594624, z: 3.1489434}
+    m_Target: {x: -0.046808958, y: 1.0418968, z: -0.64089274}
     speed: 2
-    m_Value: {x: -24.760284, y: -0.17594624, z: 3.1489434}
+    m_Value: {x: -0.046808958, y: 1.0418968, z: -0.64089274}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -704,13 +704,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3751762, y: 0.30053318, z: -0.13001741, w: -0.86721265}
+    m_Target: {x: -0.0674759, y: 0.9297855, z: -0.2160438, w: -0.29036552}
     speed: 2
-    m_Value: {x: -0.3751762, y: 0.30053318, z: -0.13001741, w: -0.86721265}
+    m_Value: {x: -0.067798495, y: 0.9293298, z: -0.21593791, w: -0.2917539}
   m_Size:
-    m_Target: 5.726891
+    m_Target: 1.2088127
     speed: 2
-    m_Value: 5.726891
+    m_Value: 1.2088127
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -769,7 +769,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 18fbffff
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -934,36 +934,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/UnityTechnologies
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/UnityTechnologies
   m_LastFoldersGridSize: 16
-  m_LastProjectPath: C:\Users\kbh19\unity\prototype_01
+  m_LastProjectPath: C:\Users\kbh19\Documents\GitHub\proj-3d-puzzle-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 48690000
-    m_LastClickedID: 26952
-    m_ExpandedIDs: 00000000226500002465000026650000286500002a6500002c6500002e6500003065000032650000
+    scrollPos: {x: 0, y: 207}
+    m_SelectedIDs: 6e650000
+    m_LastClickedID: 25966
+    m_ExpandedIDs: 0000000026650000286500002a6500002c6500002e65000030650000326500003465000036650000686500006e65000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Textures
+      m_OriginalName: Textures
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 26000
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -977,7 +977,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000226500002465000026650000286500002a6500002c6500002e6500003065000032650000
+    m_ExpandedIDs: 0000000026650000286500002a6500002c6500002e65000030650000326500003465000036650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1002,8 +1002,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 0ec2ffff
-    m_LastClickedInstanceID: -15858
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000086870000b6870000c8a200000ea30000dca20000527e0000
     m_RenameOverlay:
