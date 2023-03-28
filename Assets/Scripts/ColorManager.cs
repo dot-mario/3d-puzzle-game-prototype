@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ColorManager : MonoBehaviour
 {
@@ -15,9 +16,24 @@ public class ColorManager : MonoBehaviour
     public GameObject greenPannelObjects;
     public GameObject bluePannelObjects;
 
+    public GameObject qRColorBox;
+    public GameObject qGColorBox;
+    public GameObject qBColorBox;
+
+    public GameObject eRColorBox;
+    public GameObject eGColorBox;
+    public GameObject eBColorBox;
+
     public ColorEvent colorEvent = new ColorEvent();
     void Start()
     {
+        qRColorBox.GetComponent<Image>().color = Color.black;
+        qRColorBox.GetComponent<Image>().color = Color.black;
+        qGColorBox.GetComponent<Image>().color = Color.black;
+        qBColorBox.GetComponent<Image>().color = Color.black;
+        eRColorBox.GetComponent<Image>().color = Color.black;
+        eGColorBox.GetComponent<Image>().color = Color.black;
+        eBColorBox.GetComponent<Image>().color = Color.black;
     }
 
     // Update is called once per frame
@@ -29,15 +45,27 @@ public class ColorManager : MonoBehaviour
             {
                 case "None":
                     nowQColor = "Red";
+                    qRColorBox.GetComponent<Image>().color = Color.red;
+                    qGColorBox.GetComponent<Image>().color = Color.black;
+                    qBColorBox.GetComponent<Image>().color = Color.black;
                     break;
                 case "Red":
                     nowQColor = "Green";
+                    qRColorBox.GetComponent<Image>().color = Color.black;
+                    qGColorBox.GetComponent<Image>().color = Color.green;
+                    qBColorBox.GetComponent<Image>().color = Color.black;
                     break;
                 case "Green":
                     nowQColor = "Blue";
+                    qRColorBox.GetComponent<Image>().color = Color.black;
+                    qGColorBox.GetComponent<Image>().color = Color.black;
+                    qBColorBox.GetComponent<Image>().color = Color.blue;
                     break;
                 case "Blue":
                     nowQColor = "None";
+                    qRColorBox.GetComponent<Image>().color = Color.black;
+                    qGColorBox.GetComponent<Image>().color = Color.black;
+                    qBColorBox.GetComponent<Image>().color = Color.black;
                     break;
             }
             nowColor = ColorCheck(nowQColor, nowEColor);
@@ -51,15 +79,27 @@ public class ColorManager : MonoBehaviour
             {
                 case "None":
                     nowEColor = "Red";
+                    eRColorBox.GetComponent<Image>().color = Color.red;
+                    eGColorBox.GetComponent<Image>().color = Color.black;
+                    eBColorBox.GetComponent<Image>().color = Color.black;
                     break;
                 case "Red":
                     nowEColor = "Green";
+                    eRColorBox.GetComponent<Image>().color = Color.black;
+                    eGColorBox.GetComponent<Image>().color = Color.green;
+                    eBColorBox.GetComponent<Image>().color = Color.black;
                     break;
                 case "Green":
                     nowEColor = "Blue";
+                    eRColorBox.GetComponent<Image>().color = Color.black;
+                    eGColorBox.GetComponent<Image>().color = Color.black;
+                    eBColorBox.GetComponent<Image>().color = Color.blue;
                     break;
                 case "Blue":
                     nowEColor = "None";
+                    eRColorBox.GetComponent<Image>().color = Color.black;
+                    eGColorBox.GetComponent<Image>().color = Color.black;
+                    eBColorBox.GetComponent<Image>().color = Color.black;
                     break;
             }
             nowColor = ColorCheck(nowQColor, nowEColor);

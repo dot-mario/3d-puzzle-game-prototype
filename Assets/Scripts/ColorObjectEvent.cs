@@ -25,6 +25,10 @@ public class ColorObjectEvent : MonoBehaviour
         colorManager.colorEvent.AddListener(OnColorEvent);
 
         body = GetComponent<Rigidbody>();
+
+        Renderer renderer = gameObject.GetComponent<Renderer>();
+        renderer.material.color = UnityEngine.Color.black;
+        body.isKinematic = true;
     }
     void OnColorEvent(string color)
     {
@@ -34,11 +38,6 @@ public class ColorObjectEvent : MonoBehaviour
             renderer.material.color = ccolor;
             body.isKinematic = false;
             Debug.Log("Event data: " + color);
-        } else if (color == "None")
-        {
-            Renderer renderer = gameObject.GetComponent<Renderer>();
-            renderer.material.color = ccolor;
-            body.isKinematic = false;
         }
         else
         {

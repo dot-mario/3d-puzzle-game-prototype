@@ -12,7 +12,14 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 movement;
     private float verticalRotation = 0f;
     private bool isGrounded = false;
+    private void Start()
+    {
+        // 마우스 커서를 가운데로 고정
+        Cursor.lockState = CursorLockMode.Locked;
 
+        // 마우스 커서를 보이지 않도록 설정
+        Cursor.visible = false;
+    }
     void Update()
     {
         // Get input for movement
@@ -34,6 +41,14 @@ public class FirstPersonController : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = 8f;
+        }
+        else
+        {
+            movementSpeed = 5f;
         }
     }
 
