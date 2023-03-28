@@ -2,17 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ColorManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameObject[] colorObjects;
-    GameObject[] redObjects;
-    GameObject[] greenObjects;
-    GameObject[] blueObjects;
-    GameObject[] magentaObjects;
-    GameObject[] cyanObjects;
-    GameObject[] yellowObjects;
     private string nowQColor = "None";
     private string nowEColor = "None";
     private string nowColor = "None";
@@ -20,25 +14,10 @@ public class ColorManager : MonoBehaviour
     public GameObject redPannelObjects;
     public GameObject greenPannelObjects;
     public GameObject bluePannelObjects;
+
+    public ColorEvent colorEvent = new ColorEvent();
     void Start()
     {
-        redObjects = GameObject.FindGameObjectsWithTag("Red");
-        greenObjects = GameObject.FindGameObjectsWithTag("Green");
-        blueObjects = GameObject.FindGameObjectsWithTag("Blue");
-        magentaObjects = GameObject.FindGameObjectsWithTag("Magenta");
-        cyanObjects = GameObject.FindGameObjectsWithTag("Cyan");
-        yellowObjects = GameObject.FindGameObjectsWithTag("Yellow");
-
-        var list = new List<GameObject>();
-        list.AddRange(redObjects);
-        list.AddRange(greenObjects);
-        list.AddRange(blueObjects);
-        list.AddRange(magentaObjects);
-        list.AddRange(cyanObjects);
-        list.AddRange(yellowObjects);
-
-        colorObjects = list.ToArray();
-        Debug.Log(colorObjects.Length);
     }
 
     // Update is called once per frame
@@ -63,7 +42,7 @@ public class ColorManager : MonoBehaviour
             }
             nowColor = ColorCheck(nowQColor, nowEColor);
             ColorActive(nowColor);
-
+            ColorEvent(nowColor);
             Debug.Log(nowQColor + nowEColor + nowColor);
         }
         if (Input.GetKeyDown(KeyCode.E)) 
@@ -85,7 +64,7 @@ public class ColorManager : MonoBehaviour
             }
             nowColor = ColorCheck(nowQColor, nowEColor);
             ColorActive(nowColor);
-
+            ColorEvent(nowColor);
             Debug.Log(nowQColor + nowEColor + nowColor);
         }
     }
@@ -167,75 +146,49 @@ public class ColorManager : MonoBehaviour
     }
     private void ColorActive(string color)
     {
-        foreach (GameObject obj in colorObjects)
-        {
-            obj.SetActive(false);
-        }
         redPannelObjects.SetActive(false);
         greenPannelObjects.SetActive(false);
         bluePannelObjects.SetActive(false);
         switch (color)
         {
             case "None":
-                foreach (GameObject obj in colorObjects)
-                {
-                    obj.SetActive(true);
-                }
                 break;
             case "Red":
-                foreach (GameObject obj in redObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(true);
                 greenPannelObjects.SetActive(false);
                 bluePannelObjects.SetActive(false);
                 break;
             case "Green":
-                foreach (GameObject obj in greenObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(false);
                 greenPannelObjects.SetActive(true);
                 bluePannelObjects.SetActive(false);
                 break;
             case "Blue":
-                foreach (GameObject obj in blueObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(false);
                 greenPannelObjects.SetActive(false);
                 bluePannelObjects.SetActive(true);
                 break;
             case "Magenta":
-                foreach (GameObject obj in magentaObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(true);
                 greenPannelObjects.SetActive(false);
                 bluePannelObjects.SetActive(true);
                 break;
             case "Cyan":
-                foreach (GameObject obj in cyanObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(false);
                 greenPannelObjects.SetActive(true);
                 bluePannelObjects.SetActive(true);
                 break;
             case "Yellow":
-                foreach (GameObject obj in yellowObjects)
-                {
-                    obj.SetActive(true);
-                }
                 redPannelObjects.SetActive(true);
                 greenPannelObjects.SetActive(true);
                 bluePannelObjects.SetActive(false);
                 break;
         }
     }
+    private void ColorEvent(string color)
+    {
+        colorEvent.Invoke(color);
+    }
 }
+
+public class ColorEvent : UnityEvent<string> { }
